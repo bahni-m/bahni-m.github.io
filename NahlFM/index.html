@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>nahl.fm</title>
+    <!-- SEO -->
+    <meta name="description" content="Instagram currator for islamic content" />
+    <meta name="keywords" content="instagram, sunnah, salaf, konten islami, ramadhan" />
+    <meta name="author" content="bahni.me" />
+    <!-- SEO -->
+    <!-- CSS & JS -->
+    <link rel="stylesheet" type="text/css" href="stylesheets/main.css" />
+    <script src="js/snap.svg-min.js"></script>
+    <script src="js/modernizr.custom.js"></script>
+    <!--[if IE]>
+        <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+        <![endif]-->
+    <!-- CSS & JS -->
+</head>
+
+<body class="demo-1">
+    </div>
+    <div class="main">
+        <header>
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="col-md-1">
+                            <a class="btn btn-default menu-btn" href="#" role="button">Menu</a>
+                        </div>
+                        <div class="col-md-1">
+                            <a class="btn btn-default join-btn" href="#" role="button">Join Us</a>
+                        </div>
+                    </div>
+                    <!-- col-md-12 -->
+                </div>
+                <!-- row -->
+            </div>
+            <!-- container -->
+        </header>
+        <div class="container">
+            <div class="stack">
+                <ul id="elasticstack" class="stack__images">
+                    <li><img src="img/1.jpg" alt="01" /></li>
+                    <li><img src="img/2.jpg" alt="02" /></li>
+                    <li><img src="img/3.jpg" alt="03" /></li>
+                    <li><img src="img/4.jpg" alt="04" /></li>
+                    <li><img src="img/5.jpg" alt="05" /></li>
+                    <li><img src="img/6.jpg" alt="06" /></li>
+                </ul>
+                <button id="stack-next" class="stack__next"><i class="icon icon-down"></i><span>Next</span></button>
+                <ul id="stack-titles" class="stack__titles">
+                    <li class="current">
+                        <blockquote>
+                            <p>"Imam Hasan Al-Bashri rahimahullah berkata:“Wahai manusia,...."</p>
+                            <footer><a href="https://instagram.com/p/1hC-Iiy1DI/">BEBAS DOSA BUKAN SYARAT JADI JURU DAKWAH</a> by Al-Hikmah</footer>
+                        </blockquote>
+                    </li>
+                    <li>
+                        <blockquote>
+                            <p>"Hendaknya kita memilih pakaian yang bagus saat pergi ke masjid...."</p>
+                            <footer><a href="https://instagram.com/p/1jfhmzS1P3/">PAKAILAH PAKAIAN YANG INDAH SETIAP KE MASJID</a> by Al Hikmah</footer>
+                        </blockquote>
+                    </li>
+                    <li>
+                        <blockquote>
+                            <p>"Tak kenal maka tak sayang. Peribahasa ini nampaknya menjadi sebab utama,..."</p>
+                            <footer><a href="https://instagram.com/p/2SqSF4EwVB/">Kenapa Harus Shalat?</a> by Be Good</footer>
+                        </blockquote>
+                    </li>
+                    <li>
+                        <blockquote>
+                            <p>"Saling menasihati dalam kebenaran dan kesabaran memang tak selalu mudah untuk dijalankan...."</p>
+                            <footer><a href="https://instagram.com/p/2LBEqQEwfT/">Hidayah Milik Allah</a> by Be Good</footer>
+                        </blockquote>
+                    </li>
+                    <li>
+                        <blockquote>
+                            <p>"Sebagian orang mungkin bertanya; apa arti kehidupan ini?..."</p>
+                            <footer><a href="https://instagram.com/p/2XqXZ0Ewcl/">Apa Arti Hidup?</a> by Be Good</footer>
+                        </blockquote>
+                    </li>
+                    <li>
+                        <blockquote>
+                            <p>"Alhamdulillah, saat ini kita hampir menginjak bulan Sya’ban,..."</p>
+                            <footer><a href="https://instagram.com/p/2SLDfgy1EL/">SEGERA LUNASI HUTANG PUASA KITA</a> by Al Hikmah</footer>
+                        </blockquote>
+                    </li>
+                </ul>
+            </div>
+            <!-- /stack -->
+        </div>
+        <!-- /container -->
+        <br>
+        <br>
+        <br>
+        <footer>
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="center-block text-center">
+                            <a href="#">Designed by Bahni.me</a>
+                        </div>
+                        <div class="center-block text-center">
+                            <a href="#">Nahl.fm &copy;2015</a>
+                        </div>
+                    </div>
+                    <!-- col-md-12 -->
+                </div>
+                <!-- row -->
+            </div>
+            <!-- container -->
+        </footer>
+    </div>
+    <!-- /main-->
+    <script src="js/jquery.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/draggabilly.pkgd.min.js"></script>
+    <script src="js/elastiStack.js"></script>
+    <script>
+    (function() {
+        var body = document.body,
+            titles = [].slice.call(document.querySelectorAll('#stack-titles > li')),
+            totalTitles = titles.length,
+            stack = new ElastiStack(document.getElementById('elasticstack'), {
+                onUpdateStack: function(idx) {
+                    classie.remove(titles[idx === 0 ? totalTitles - 1 : idx - 1], 'current');
+                    classie.add(titles[idx], 'current');
+                }
+            }),
+            shapeEl = document.getElementById('morph-shape'),
+            s = Snap(shapeEl.querySelector('svg')),
+            pathEl = s.select('path'),
+            paths = {
+                reset: pathEl.attr('d'),
+                next: shapeEl.getAttribute('data-morph-next')
+            };
+
+        document.getElementById('stack-next').addEventListener('mousedown', nextItem);
+
+        function nextItem() {
+            classie.add(body, 'animating');
+            classie.add(body, 'navigate-next');
+            pathEl.stop().animate({
+                'path': paths.next
+            }, 450, mina.easeinout, function() {
+                classie.remove(body, 'navigate-next');
+                stack.nextItem({
+                    transform: 'translate3d(0,-60px,400px)'
+                });
+                pathEl.stop().animate({
+                    'path': paths.reset
+                }, 100, mina.easeout, function() {
+                    classie.remove(body, 'animating');
+                });
+            });
+        }
+    })();
+    </script>
+    <!-- <em>Special thanks to Codrops</em> -->
+</body>
+
+</html>
